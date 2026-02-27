@@ -3,23 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio Étudiant</title>
+  <title>Portfolio Étudiant - Enzo</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- 👤 Présentation -->
   <header>
+    <img src="avatar.png" alt="Mon avatar" class="avatar">
     <h1>Bonjour, je suis Enzo</h1>
-    <p>Étudiant passionné par le développement web.</p>
+    <p>Étudiant en développement web, motivé et curieux.</p>
+    <p class="slogan">"Apprendre aujourd’hui, construire demain."</p>
+    <button id="toggleTheme">🌙 / ☀️</button>
   </header>
 
-  <!-- 💻 Compétences -->
-  <section id="competences">
-    <h2>Compétences</h2>
+  <!-- 🎯 Objectifs -->
+  <section id="objectifs">
+    <h2>Mes Objectifs</h2>
     <ul>
-      <li>HTML (débutant)</li>
-      <li>CSS (débutant)</li>
-      <li>JavaScript (en cours d’apprentissage)</li>
+      <li>Devenir développeur / ingénieur</li>
+      <li>Apprendre de nouvelles technologies</li>
+      <li>Créer des projets utiles</li>
+    </ul>
+  </section>
+
+  <!-- 📚 Ce que j’apprends -->
+  <section id="apprentissage">
+    <h2>Ce que j’apprends actuellement</h2>
+    <ul>
+      <li>HTML : structure d’un site</li>
+      <li>CSS : design et responsive</li>
+      <li>JavaScript : interactions simples</li>
     </ul>
   </section>
 
@@ -32,10 +45,37 @@
     </div>
   </section>
 
+  <!-- 📈 Évolution -->
+  <section id="evolution">
+    <h2>Évolution</h2>
+    <p>Ce site sera mis à jour régulièrement pour refléter ma progression et accueillir de nouveaux projets.</p>
+  </section>
+
+  <!-- 📅 Journal -->
+  <section id="journal">
+    <h2>Mini journal de progression</h2>
+    <ul>
+      <li>Jour 1 : création du site</li>
+      <li>Jour 7 : ajout du CSS</li>
+      <li>Jour 14 : JavaScript</li>
+    </ul>
+    <p>Dernière mise à jour : <span id="lastUpdate"></span></p>
+  </section>
+
+  <!-- ❓ FAQ -->
+  <section id="faq">
+    <h2>FAQ personnelle</h2>
+    <p><strong>Pourquoi j’apprends le code ?</strong> Parce que je veux créer des projets utiles.</p>
+    <p><strong>Depuis quand ?</strong> Depuis 2026.</p>
+    <p><strong>Comment je travaille ?</strong> Avec curiosité et régularité.</p>
+  </section>
+
   <!-- 📬 Contact -->
   <section id="contact">
     <h2>Contact</h2>
     <p>Tu peux me joindre à : <a href="mail">enzotchaptche937@gmail.com</a></p>
   </section>
+
+  <script src="script.js"></script>
 </body>
 </html>

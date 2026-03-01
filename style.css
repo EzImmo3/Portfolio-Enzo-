@@ -152,4 +152,155 @@ nav button {
 
 .secondary-btn {
   background: transparent;
-  border: 2px solid
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+.secondary-btn:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* ------------------------------
+   CARDS
+------------------------------ */
+.card-section {
+  padding: 60px 20px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--bg-alt);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+/* ------------------------------
+   PROJETS
+------------------------------ */
+.projects-section {
+  padding: 60px 20px;
+}
+
+.project {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  background: var(--bg-alt);
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.project-no-image {
+  grid-template-columns: 1fr !important;
+}
+
+/* ------------------------------
+   TIMELINE
+------------------------------ */
+.timeline-section {
+  padding: 60px 20px;
+}
+
+.timeline {
+  list-style: none;
+  border-left: 3px solid var(--primary);
+  padding-left: 20px;
+}
+
+.timeline li {
+  margin-bottom: 15px;
+}
+
+.day {
+  font-weight: bold;
+  color: var(--primary);
+}
+
+/* ------------------------------
+   FAQ
+------------------------------ */
+.faq-section {
+  padding: 60px 20px;
+}
+
+details {
+  background: var(--bg-alt);
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  margin-bottom: 10px;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* ------------------------------
+   CONTACT
+------------------------------ */
+.contact-section {
+  padding: 60px 20px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+}
+
+.contact-links ul {
+  list-style: none;
+}
+
+.contact-links li {
+  margin-bottom: 10px;
+}
+
+/* ------------------------------
+   FOOTER
+------------------------------ */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: var(--bg-alt);
+  border-top: 1px solid var(--border);
+  margin-top: 40px;
+}
+
+/* ------------------------------
+   RESPONSIVE
+------------------------------ */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project {
+    grid-template-columns: 1fr;
+  }
+}

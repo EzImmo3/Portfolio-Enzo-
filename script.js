@@ -1,74 +1,86 @@
-// ------------------------------
-// Date de dernière mise à jour
-// ------------------------------
-document.addEventListener("DOMContentLoaded", () => {
-  const lastUpdate = document.getElementById("lastUpdate");
-  if (lastUpdate) {
-    const today = new Date().toLocaleDateString("fr-FR");
-    lastUpdate.textContent = today;
-  }
-});
+/* ============================= */
+/* 📌 NAVIGATION ENTRE SECTIONS */
+/* ============================= */
 
-// ------------------------------
-// Scroll fluide vers une section
-// ------------------------------
-function scrollToSection(id) {
-  const el = document.getElementById(id);
-  if (!el) return;
-  el.scrollIntoView({ behavior: "smooth", block: "start" });
-}
+const navLinks = document.querySelectorAll(".nav-link");
+const scrollButtons = document.querySelectorAll("[data-target]");
 
-document.querySelectorAll("[data-target]").forEach(btn => {
+scrollButtons.forEach(btn => {
   btn.addEventListener("click", () => {
     const target = btn.getAttribute("data-target");
-    scrollToSection(target);
+    const section = document.getElementById(target);
+
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
   });
 });
 
-// ------------------------------
-// Mode clair / sombre
-// ------------------------------
-const toggleBtn = document.getElementById("toggleTheme");
-const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-const savedTheme = localStorage.getItem("theme");
+/* ============================= */
+/* 📅 DATE DE DERNIÈRE MISE À JOUR */
+/* ============================= */
 
-// Appliquer le thème sauvegardé ou celui du système
-if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
-  document.body.classList.add("dark");
-  if (toggleBtn) toggleBtn.textContent = "☀️";
-}
-
-if (toggleBtn) {
-  toggleBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-    const isDark = document.body.classList.contains("dark");
-    toggleBtn.textContent = isDark ? "☀️" : "🌙";
-    localStorage.setItem("theme", isDark ? "dark" : "light");
+const lastUpdateEl = document.getElementById("lastUpdate");
+if (lastUpdateEl) {
+  const now = new Date();
+  const formatted = now.toLocaleDateString("fr-FR", {
+    day: "2-digit",
+    month: "long",
+    year: "numeric"
   });
+  lastUpdateEl.textContent = formatted;
 }
 
-// ------------------------------
-// Formulaire réel (Formspree)
-// ------------------------------
-const form = document.querySelector(".contact-form");
+/* ============================= */
+/* 🌗 MODE CLAIR / SOMBRE */
+/* ============================= */
 
-if (form) {
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
+const toggleTheme = document.getElementById("toggleTheme");
+const THEME_KEY = "portfolio_theme";
 
-    const data = new FormData(form);
+// Thème par défaut si rien n'est stocké
+if (!localStorage.getItem(THEME_KEY)) {
+  localStorage.setItem(THEME_KEY, "dark");
+}
 
-    const response = await fetch(form.action, {
-      method: "POST",
-      body: data,
-      headers: { "Accept": "application/json" }
+// Appliquer le thème sauvegardé
+document.body.classList.add(localStorage.getItem(THEME_KEY));
+
+// Mettre à jour l'icône du bouton
+function updateThemeIcon() {
+  const isLight = document.body.classList.contains("light");
+  toggleTheme.textContent = isLight ? "🌙" : "☀️";
+}
+updateThemeIcon();
+
+// Changer le thème au clic
+toggleTheme.addEventListener("click", () => {
+  const isLight = document.body.classList.contains("light");
+
+  document.body.classList.remove("light", "dark");
+  document.body.classList.add(isLight ? "dark" : "light");
+
+  localStorage.setItem(THEME_KEY, isLight ? "dark" : "light");
+
+  updateThemeIcon();
+});
+
+/* ============================= */
+/* ✨ ANIMATIONS DOUCES AU SCROLL */
+/* ============================= */
+
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
     });
+  },
+  { threshold: 0.2 }
+);
 
-    if (response.ok) {
-      alert("Merci ! Ton message a bien été envoyé.");
-      form.reset();
-    } else {
-      alert("Une erreur est survenue. Réessaie plus tard.");
-    }
-  });
-}
+document.querySelectorAll("section, .card, .project").forEach(el => {
+  el.classList.add("hidden");
+  observer.observe(el);
+});

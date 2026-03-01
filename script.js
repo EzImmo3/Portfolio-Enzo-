@@ -1,3 +1,6 @@
+// ------------------------------
+// Date de dernière mise à jour
+// ------------------------------
 document.addEventListener("DOMContentLoaded", () => {
   const lastUpdate = document.getElementById("lastUpdate");
   if (lastUpdate) {
@@ -6,6 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+// ------------------------------
+// Scroll fluide vers une section
+// ------------------------------
 function scrollToSection(id) {
   const el = document.getElementById(id);
   if (!el) return;
@@ -19,10 +25,14 @@ document.querySelectorAll("[data-target]").forEach(btn => {
   });
 });
 
+// ------------------------------
+// Mode clair / sombre
+// ------------------------------
 const toggleBtn = document.getElementById("toggleTheme");
 const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 const savedTheme = localStorage.getItem("theme");
 
+// Appliquer le thème sauvegardé ou celui du système
 if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
   document.body.classList.add("dark");
   if (toggleBtn) toggleBtn.textContent = "☀️";
@@ -37,11 +47,28 @@ if (toggleBtn) {
   });
 }
 
+// ------------------------------
+// Formulaire réel (Formspree)
+// ------------------------------
 const form = document.querySelector(".contact-form");
+
 if (form) {
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    alert("Merci pour ton message ! (Formulaire de démonstration)");
-    form.reset();
+
+    const data = new FormData(form);
+
+    const response = await fetch(form.action, {
+      method: "POST",
+      body: data,
+      headers: { "Accept": "application/json" }
+    });
+
+    if (response.ok) {
+      alert("Merci ! Ton message a bien été envoyé.");
+      form.reset();
+    } else {
+      alert("Une erreur est survenue. Réessaie plus tard.");
+    }
   });
 }

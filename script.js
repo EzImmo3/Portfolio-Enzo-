@@ -1,4 +1,3 @@
-// Afficher la date de dernière mise à jour
 document.addEventListener("DOMContentLoaded", () => {
   const lastUpdate = document.getElementById("lastUpdate");
   if (lastUpdate) {
@@ -7,7 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// Scroll fluide vers une section
 function scrollToSection(id) {
   const el = document.getElementById(id);
   if (!el) return;
@@ -21,12 +19,10 @@ document.querySelectorAll("[data-target]").forEach(btn => {
   });
 });
 
-// Mode clair / sombre avec sauvegarde locale
 const toggleBtn = document.getElementById("toggleTheme");
 const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 const savedTheme = localStorage.getItem("theme");
 
-// Appliquer le thème sauvegardé ou celui du système
 if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
   document.body.classList.add("dark");
   if (toggleBtn) toggleBtn.textContent = "☀️";
@@ -41,7 +37,6 @@ if (toggleBtn) {
   });
 }
 
-// Formulaire de contact (démo)
 const form = document.querySelector(".contact-form");
 if (form) {
   form.addEventListener("submit", (e) => {

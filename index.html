@@ -3,78 +3,196 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio Étudiant - Enzo</title>
+  <title>Portfolio – Enzo</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <!-- 👤 Présentation -->
-  <header>
-    <img src="avatar.png" alt="Mon avatar" class="avatar">
-    <h1>Bonjour, je suis Enzo</h1>
-    <p>Étudiant en développement web, motivé et curieux.</p>
-    <p class="slogan">"Apprendre aujourd’hui, construire demain."</p>
-    <button id="toggleTheme">🌙 / ☀️</button>
+  <!-- BARRE DU HAUT -->
+  <header class="topbar">
+    <div class="logo">Enzo.dev</div>
+
+    <nav>
+      <button class="nav-link" data-target="hero">Accueil</button>
+      <button class="nav-link" data-target="projets">Projets</button>
+      <button class="nav-link" data-target="objectifs">Objectifs</button>
+      <button class="nav-link" data-target="contact">Contact</button>
+    </nav>
+
+    <button id="toggleTheme" class="icon-btn">🌙</button>
   </header>
 
-  <!-- 🎯 Objectifs -->
-  <section id="objectifs">
-    <h2>Mes Objectifs</h2>
-    <ul>
-      <li>Devenir développeur / ingénieur</li>
-      <li>Apprendre de nouvelles technologies</li>
-      <li>Créer des projets utiles</li>
-    </ul>
-  </section>
+  <main>
 
-  <!-- 📚 Ce que j’apprends -->
-  <section id="apprentissage">
-    <h2>Ce que j’apprends actuellement</h2>
-    <ul>
-      <li>HTML : structure d’un site</li>
-      <li>CSS : design et responsive</li>
-      <li>JavaScript : interactions simples</li>
-    </ul>
-  </section>
+    <!-- SECTION HERO -->
+    <section id="hero" class="hero">
+      <div class="hero-text">
+        <p class="tag">Portfolio étudiant</p>
 
-  <!-- 📂 Projets -->
-  <section id="projets">
-    <h2>Projets</h2>
-    <div class="projet">
-      <h3>Portfolio Étudiant</h3>
-      <p>Mon premier site web personnel.</p>
-    </div>
-  </section>
+        <h1>Enzo – Développeur web junior en devenir</h1>
 
-  <!-- 📈 Évolution -->
-  <section id="evolution">
-    <h2>Évolution</h2>
-    <p>Ce site sera mis à jour régulièrement pour refléter ma progression et accueillir de nouveaux projets.</p>
-  </section>
+        <p class="subtitle">
+          J’apprends le développement web (HTML, CSS, JavaScript) en créant des projets concrets
+          et en les publiant en ligne.
+        </p>
 
-  <!-- 📅 Journal -->
-  <section id="journal">
-    <h2>Mini journal de progression</h2>
-    <ul>
-      <li>Jour 1 : création du site</li>
-      <li>Jour 7 : ajout du CSS</li>
-      <li>Jour 14 : JavaScript</li>
-    </ul>
-    <p>Dernière mise à jour : <span id="lastUpdate"></span></p>
-  </section>
+        <div class="hero-actions">
+          <button class="primary-btn" data-target="projets">Voir mes projets</button>
+          <button class="secondary-btn" data-target="journal">Voir ma progression</button>
+        </div>
 
-  <!-- ❓ FAQ -->
-  <section id="faq">
-    <h2>FAQ personnelle</h2>
-    <p><strong>Pourquoi j’apprends le code ?</strong> Parce que je veux créer des projets utiles.</p>
-    <p><strong>Depuis quand ?</strong> Depuis 2026.</p>
-    <p><strong>Comment je travaille ?</strong> Avec curiosité et régularité.</p>
-  </section>
+        <p class="last-update">Dernière mise à jour : <span id="lastUpdate"></span></p>
+      </div>
 
-  <!-- 📬 Contact -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Tu peux me joindre à : <a href="mail">enzotchaptche937@gmail.com</a></p>
-  </section>
+      <div class="hero-visual">
+        <img src="avatar.png" alt="Avatar d'Enzo" class="avatar">
+        <p class="slogan">“Apprendre aujourd’hui, construire demain.”</p>
+      </div>
+    </section>
+
+    <!-- CE QUE J'APPRENDS -->
+    <section id="apprentissage" class="card-section">
+      <h2>Ce que j’apprends actuellement</h2>
+
+      <div class="cards">
+        <article class="card">
+          <h3>HTML</h3>
+          <p>Structure d’un site, balises, liens, images.</p>
+        </article>
+
+        <article class="card">
+          <h3>CSS</h3>
+          <p>Design, couleurs, responsive, animations.</p>
+        </article>
+
+        <article class="card">
+          <h3>JavaScript</h3>
+          <p>Interactions simples, boutons, mode sombre.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROJETS -->
+    <section id="projets" class="projects-section">
+      <h2>Projets</h2>
+
+      <article class="project">
+        <div class="project-image">
+          <img src="capture-portfolio.png" alt="Capture du portfolio">
+        </div>
+
+        <div class="project-content">
+          <h3>Portfolio personnel</h3>
+
+          <p class="project-context"><strong>Contexte :</strong> Créer un site pour présenter mon parcours.</p>
+          <p><strong>Ce que j’ai fait :</strong> HTML, CSS, JavaScript, responsive, mode sombre.</p>
+          <p><strong>Ce que j’ai appris :</strong> organisation, design, interactions JS.</p>
+          <p class="project-tech"><strong>Technologies :</strong> HTML, CSS, JavaScript.</p>
+
+          <div class="project-actions">
+            <a href="https://EzImmo3.github.io" class="primary-btn" target="_blank">Voir le site</a>
+            <a href="https://github.com/EzImmo3" class="secondary-btn" target="_blank">Voir le code</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- OBJECTIFS -->
+    <section id="objectifs" class="card-section">
+      <h2>Mes objectifs</h2>
+
+      <div class="cards">
+        <article class="card">
+          <h3>Carrière</h3>
+          <p>Devenir développeur web / ingénieur logiciel.</p>
+        </article>
+
+        <article class="card">
+          <h3>Technologies</h3>
+          <p>Approfondir JavaScript, apprendre React.</p>
+        </article>
+
+        <article class="card">
+          <h3>Projets</h3>
+          <p>Créer des outils utiles et des sites modernes.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- JOURNAL -->
+    <section id="journal" class="timeline-section">
+      <h2>Journal de progression</h2>
+
+      <ul class="timeline">
+        <li><span class="day">Jour 1</span> Mise en place du projet.</li>
+        <li><span class="day">Jour 7</span> Ajout du CSS.</li>
+        <li><span class="day">Jour 14</span> Ajout du JavaScript.</li>
+        <li><span class="day">Jour 21</span> Version responsive.</li>
+      </ul>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq-section">
+      <h2>FAQ personnelle</h2>
+
+      <details>
+        <summary>Pourquoi j’apprends le code ?</summary>
+        <p>Pour créer des projets utiles et comprendre le web.</p>
+      </details>
+
+      <details>
+        <summary>Depuis quand ?</summary>
+        <p>Depuis 2026.</p>
+      </details>
+
+      <details>
+        <summary>Comment je travaille ?</summary>
+        <p>Par petites étapes régulières.</p>
+      </details>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact-section">
+      <h2>Contact</h2>
+
+      <p>Tu peux me contacter pour un stage, une alternance ou discuter de code.</p>
+
+      <div class="contact-grid">
+
+        <form class="contact-form">
+          <label>Nom
+            <input type="text" name="nom" placeholder="Ton nom">
+          </label>
+
+          <label>Email
+            <input type="email" name="email" placeholder="ton.email@example.com">
+          </label>
+
+          <label>Message
+            <textarea name="message" rows="4" placeholder="Ton message..."></textarea>
+          </label>
+
+          <button type="submit" class="primary-btn">Envoyer</button>
+          <p class="form-info">Formulaire de démonstration.</p>
+        </form>
+
+        <div class="contact-links">
+          <h3>Réseaux & CV</h3>
+          <ul>
+            <li><a href="https://github.com/EzImmo3" target="_blank">GitHub</a></li>
+            <li><a href="#" target="_blank">LinkedIn (à venir)</a></li>
+            <li><a href="cv-enzo.pdf" target="_blank">Télécharger mon CV</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Portfolio d’Enzo – créé avec HTML, CSS et JavaScript.</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>

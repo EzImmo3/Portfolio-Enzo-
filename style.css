@@ -27,13 +27,18 @@
 }
 
 /* BODY */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-main);
   line-height: 1.7;
   background: var(--bg-light);
   color: var(--text-light);
   transition: background 0.3s, color 0.3s;
-  padding-top: 80px;
+  scroll-snap-type: y mandatory; /* effet snap */
+  overflow-y: scroll;
 }
 
 /* MODE SOMBRE */
@@ -80,11 +85,17 @@ nav a:hover {
   color: var(--secondary-light);
 }
 
-/* SECTIONS */
+/* SECTIONS plein écran */
 section {
+  min-height: 100vh; /* chaque section prend tout l'écran */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centré verticalement */
+  align-items: center;     /* centré horizontalement */
   padding: 3rem 2rem;
   max-width: 1000px;
   margin: auto;
+  scroll-snap-align: start;
 }
 
 section h2 {
@@ -144,12 +155,19 @@ footer {
   color: white;
   text-align: center;
   padding: 1rem;
-  margin-top: 2rem;
 }
 
 body.dark footer {
   background: var(--primary-dark);
 }
+
+/* COULEURS PAR SECTION (mode clair) */
+#about { background: #e6f0ff; }       /* bleu très pâle */
+#projects { background: #fdfdfd; }    /* blanc cassé */
+#skills { background: #f0f0f0; }      /* gris clair */
+#faq { background: #fff7f0; }         /* orange très pâle */
+#journal { background: #eafaf1; }     /* vert pâle */
+#contact { background: #1f3a93; color: white; } /* bleu marine */
 
 /* RESPONSIVE */
 @media (max-width: 768px) {

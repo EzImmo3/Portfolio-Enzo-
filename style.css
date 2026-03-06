@@ -7,21 +7,17 @@
 
 /* VARIABLES */
 :root {
-  /* Mode clair */
   --bg-light: #fdfdfd;
   --text-light: #222;
-  --primary-light: #1f3a93;   /* bleu marine */
-  --secondary-light: #ff6f61; /* orange vif */
-  --accent-light: #e6f0ff;    /* bleu très pâle */
-  --card-light: #f0f0f0;
+  --primary-light: #1f3a93;
+  --secondary-light: #ff6f61;
+  --accent-light: #e6f0ff;
 
-  /* Mode sombre */
   --bg-dark: #121212;
   --text-dark: #fdfdfd;
-  --primary-dark: #4a90e2;    /* bleu clair */
-  --secondary-dark: #ff8c42;  /* orange doux */
+  --primary-dark: #4a90e2;
+  --secondary-dark: #ff8c42;
   --accent-dark: #1e1e1e;
-  --card-dark: #1e1e1e;
 
   --font-main: "Segoe UI", Arial, sans-serif;
 }
@@ -37,7 +33,7 @@ body {
   background: var(--bg-light);
   color: var(--text-light);
   transition: background 0.3s, color 0.3s;
-  scroll-snap-type: y mandatory; /* effet snap */
+  scroll-snap-type: y mandatory;
   overflow-y: scroll;
 }
 
@@ -85,19 +81,29 @@ nav a:hover {
   color: var(--secondary-light);
 }
 
-/* SECTIONS plein écran */
+/* SECTIONS plein écran avec animation */
 section {
-  min-height: 100vh; /* chaque section prend tout l'écran */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* centré verticalement */
-  align-items: center;     /* centré horizontalement */
+  justify-content: center;
+  align-items: center;
   padding: 3rem 2rem;
-  max-width: 1000px;
-  margin: auto;
   scroll-snap-align: start;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s forwards;
 }
 
+/* Animation fade + slide */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Titres */
 section h2 {
   color: var(--primary-light);
   margin-bottom: 1rem;
@@ -160,14 +166,6 @@ footer {
 body.dark footer {
   background: var(--primary-dark);
 }
-
-/* COULEURS PAR SECTION (mode clair) */
-#about { background: #e6f0ff; }       /* bleu très pâle */
-#projects { background: #fdfdfd; }    /* blanc cassé */
-#skills { background: #f0f0f0; }      /* gris clair */
-#faq { background: #fff7f0; }         /* orange très pâle */
-#journal { background: #eafaf1; }     /* vert pâle */
-#contact { background: #1f3a93; color: white; } /* bleu marine */
 
 /* RESPONSIVE */
 @media (max-width: 768px) {

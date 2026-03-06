@@ -1,129 +1,38 @@
 /* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
   font-family: "Segoe UI", Arial, sans-serif;
-  line-height: 1.7;
+  line-height: 1.6;
   background: #fdfdfd;
   color: #2c2c2c;
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
 }
-
-/* MODE SOMBRE */
 body.dark {
   background: #0a192f; /* bleu très foncé */
   color: #fdfdfd;
 }
 
-/* HEADER (non fixe) */
+/* HEADER */
 header {
+  text-align: center;
   background: #0d47a1; /* bleu profond */
   color: white;
-  padding: 2rem;
-  text-align: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  padding: 2rem 1rem;
 }
-
-body.dark header {
-  background: #112d4e; /* bleu nuit saturé */
-}
-
-/* NAVIGATION */
-nav {
-  margin-top: 1rem;
-}
+body.dark header { background: #112d4e; }
+header h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+header p { margin-bottom: 0.5rem; }
+nav { margin: 1rem 0; }
 nav a {
   color: white;
   text-decoration: none;
-  margin: 0 1rem;
+  margin: 0 0.5rem;
   font-weight: bold;
   transition: color 0.3s;
 }
-nav a:hover {
-  color: #ff7043; /* orange vif */
-}
-body.dark nav a:hover {
-  color: #d35400; /* orange brûlé */
-}
-
-/* SECTIONS plein écran */
-section {
-  min-height: 100vh;              /* occupe tout l’écran */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  scroll-snap-align: start;
-  padding: 2rem 1rem;             /* réduit l’espace */
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 0.8s forwards;
-}
-
-/* Animation fade + slide */
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* CASE CENTRÉE */
-.container {
-  background: white;
-  padding: 1.5rem;                /* réduit l’espace interne */
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  max-width: 800px;
-  width: 90%;
-  text-align: center;
-}
-
-body.dark .container {
-  background: #1c1c1c;
-  box-shadow: 0 4px 12px rgba(255,255,255,0.05);
-}
-
-/* TITRES */
-section h2 {
-  color: #0d47a1;
-  margin-bottom: 1rem;
-  font-size: 1.6rem;
-}
-body.dark section h2 {
-  color: #64b5f6;
-}
-
-/* ARTICLES */
-article {
-  background: #f5f5f5;
-  padding: 1rem;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-}
-body.dark article {
-  background: #2c2c2c;
-}
-
-/* LISTES */
-ul {
-  list-style: none;
-  padding: 0;
-}
-ul li {
-  margin: 0.3rem 0; /* réduit l’espace entre items */
-}
-
-/* BOUTONS */
-.btn, .toggle-theme {
+nav a:hover { color: #ff7043; }
+body.dark nav a:hover { color: #d35400; }
+.toggle-theme, .btn {
   background: #ff7043;
   color: white;
   border: none;
@@ -133,16 +42,49 @@ ul li {
   font-weight: bold;
   transition: background 0.3s, transform 0.2s;
 }
-.btn:hover, .toggle-theme:hover {
+.toggle-theme:hover, .btn:hover {
   background: #0d47a1;
   transform: scale(1.05);
 }
-body.dark .btn, body.dark .toggle-theme {
-  background: #d35400;
+body.dark .toggle-theme, body.dark .btn { background: #d35400; }
+body.dark .toggle-theme:hover, body.dark .btn:hover { background: #112d4e; }
+
+/* SECTIONS */
+section {
+  padding: 3rem 1rem;
+  display: flex;
+  justify-content: center;
 }
-body.dark .btn:hover, body.dark .toggle-theme:hover {
-  background: #112d4e;
+.container {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 800px;
+  width: 100%;
 }
+body.dark .container {
+  background: #1c1c1c;
+  box-shadow: 0 4px 12px rgba(255,255,255,0.05);
+}
+section h2 {
+  color: #0d47a1;
+  margin-bottom: 1rem;
+}
+body.dark section h2 { color: #64b5f6; }
+
+/* ARTICLES */
+article {
+  background: #f5f5f5;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+body.dark article { background: #2c2c2c; }
+
+/* LISTES */
+ul { list-style: none; padding: 0; }
+ul li { margin: 0.3rem 0; }
 
 /* FOOTER */
 footer {
@@ -151,22 +93,11 @@ footer {
   text-align: center;
   padding: 1rem;
 }
-body.dark footer {
-  background: #112d4e;
-}
+body.dark footer { background: #112d4e; }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-  .container {
-    width: 95%;
-    padding: 1rem;
-  }
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  nav a {
-    margin: 0.5rem;
-  }
+  .container { padding: 1.5rem; }
+  nav { display: flex; flex-wrap: wrap; justify-content: center; }
+  nav a { margin: 0.5rem; }
 }

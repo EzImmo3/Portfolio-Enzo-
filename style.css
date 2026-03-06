@@ -24,16 +24,12 @@ body.dark {
   color: #fdfdfd;
 }
 
-/* HEADER FIXE */
+/* HEADER (non fixe) */
 header {
   background: #0d47a1; /* bleu profond */
   color: white;
-  padding: 1.5rem;
+  padding: 2rem;
   text-align: center;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
@@ -59,18 +55,17 @@ body.dark nav a:hover {
   color: #d35400; /* orange brûlé */
 }
 
-/* SECTIONS PLEIN ÉCRAN */
+/* SECTIONS plein écran */
 section {
   min-height: 100vh;              /* occupe tout l’écran */
   display: flex;
   justify-content: center;
   align-items: center;
-  scroll-snap-align: start;       /* accroche au scroll */
-  padding-top: 120px;             /* espace sous le header */
-  padding-bottom: 2rem;
+  scroll-snap-align: start;
+  padding: 2rem 1rem;             /* réduit l’espace */
   opacity: 0;
-  transform: translateY(50px);
-  animation: fadeInUp 1s forwards;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s forwards;
 }
 
 /* Animation fade + slide */
@@ -84,7 +79,7 @@ section {
 /* CASE CENTRÉE */
 .container {
   background: white;
-  padding: 2rem;
+  padding: 1.5rem;                /* réduit l’espace interne */
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   max-width: 800px;
@@ -93,7 +88,7 @@ section {
 }
 
 body.dark .container {
-  background: #1c1c1c; /* gris bleuté */
+  background: #1c1c1c;
   box-shadow: 0 4px 12px rgba(255,255,255,0.05);
 }
 
@@ -101,10 +96,10 @@ body.dark .container {
 section h2 {
   color: #0d47a1;
   margin-bottom: 1rem;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 body.dark section h2 {
-  color: #64b5f6; /* bleu clair */
+  color: #64b5f6;
 }
 
 /* ARTICLES */
@@ -115,7 +110,7 @@ article {
   margin-bottom: 1rem;
 }
 body.dark article {
-  background: #2c2c2c; /* gris charbon */
+  background: #2c2c2c;
 }
 
 /* LISTES */
@@ -124,15 +119,15 @@ ul {
   padding: 0;
 }
 ul li {
-  margin: 0.5rem 0;
+  margin: 0.3rem 0; /* réduit l’espace entre items */
 }
 
 /* BOUTONS */
 .btn, .toggle-theme {
-  background: #ff7043; /* orange vif */
+  background: #ff7043;
   color: white;
   border: none;
-  padding: 0.7rem 1.2rem;
+  padding: 0.6rem 1rem;
   border-radius: 6px;
   cursor: pointer;
   font-weight: bold;
@@ -143,10 +138,10 @@ ul li {
   transform: scale(1.05);
 }
 body.dark .btn, body.dark .toggle-theme {
-  background: #d35400; /* orange brûlé */
+  background: #d35400;
 }
 body.dark .btn:hover, body.dark .toggle-theme:hover {
-  background: #112d4e; /* bleu nuit saturé */
+  background: #112d4e;
 }
 
 /* FOOTER */
@@ -164,7 +159,7 @@ body.dark footer {
 @media (max-width: 768px) {
   .container {
     width: 95%;
-    padding: 1.5rem;
+    padding: 1rem;
   }
   nav {
     display: flex;

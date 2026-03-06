@@ -3,193 +3,89 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio – Enzo</title>
+  <title>Portfolio — Enzo Tchaptche</title>
   <link rel="stylesheet" href="style.css">
 </head>
+<body>
 
-<body class="dark">
-  <header class="topbar">
-    <div class="logo">Enzo.dev</div>
-
+  <!-- HEADER -->
+  <header>
+    <h1>Enzo Tchaptche</h1>
+    <p>Développeur web & Auteur poétique</p>
     <nav>
-      <button class="nav-link" data-target="hero">Accueil</button>
-      <button class="nav-link" data-target="projets">Projets</button>
-      <button class="nav-link" data-target="objectifs">Objectifs</button>
-      <button class="nav-link" data-target="contact">Contact</button>
+      <a href="#about">À propos</a>
+      <a href="#skills">Compétences</a>
+      <a href="#projects">Projets</a>
+      <a href="#poetry">Poésie</a>
+      <a href="#cv">CV</a>
+      <a href="#contact">Contact</a>
     </nav>
-
-    <button id="toggleTheme" class="icon-btn">🌙</button>
   </header>
 
-  <main>
+  <!-- SECTION À PROPOS -->
+  <section id="about">
+    <h2>À propos</h2>
+    <p>Je suis un étudiant passionné par le numérique et la création artistique. 
+       J’aime construire des projets qui allient technique et émotion, entre code et mots.</p>
+  </section>
 
-    <!-- HERO -->
-    <section id="hero" class="hero">
-      <div class="hero-text">
-        <p class="tag">Portfolio étudiant</p>
+  <!-- SECTION COMPÉTENCES -->
+  <section id="skills">
+    <h2>Compétences techniques</h2>
+    <ul>
+      <li>HTML, CSS, JavaScript (responsive, interactions, mode sombre)</li>
+      <li>Firebase (likes, vues, favoris en temps réel)</li>
+      <li>PWA (manifest.json, service worker, cache hors-ligne)</li>
+      <li>Organisation (JSON structuré, architecture claire et évolutive)</li>
+      <li>Git / GitHub Pages (gestion de projet, mise en ligne)</li>
+      <li>Design & UX (cohérence visuelle, branding dynamique)</li>
+    </ul>
+  </section>
 
-        <h1>Enzo – Développeur web junior en devenir</h1>
+  <!-- SECTION PROJETS -->
+  <section id="projects">
+    <h2>Projets réalisés</h2>
+    <article>
+      <h3>Site de poésie JDLF</h3>
+      <p>PWA installable avec Firebase, JSON complet (30 poèmes), favoris, likes, vues, mode immersif.</p>
+    </article>
+    <article>
+      <h3>Portfolio personnel</h3>
+      <p>Site en HTML, CSS, JS, design moderne, responsive, mode clair/sombre, publié via GitHub Pages.</p>
+    </article>
+    <article>
+      <h3>Plateforme de révision scolaire (en cours)</h3>
+      <p>Organisation par matière et chapitre, objectif : apprentissage interactif et granulaire.</p>
+    </article>
+  </section>
 
-        <p class="subtitle">
-          J’apprends le développement web (HTML, CSS, JavaScript) en créant des projets concrets
-          et en les publiant en ligne.
-        </p>
+  <!-- SECTION POÉSIE -->
+  <section id="poetry">
+    <h2>Poésie</h2>
+    <p>JDLF — plus de 30 poèmes publiés, explorant l’amour, le doute, la sincérité et la fatigue du cœur.</p>
+    <p><a href="poems.html">Découvrir mes poèmes</a></p>
+  </section>
 
-        <div class="hero-actions">
-          <button class="primary-btn" data-target="projets">Voir mes projets</button>
-          <button class="secondary-btn" data-target="journal">Voir ma progression</button>
-        </div>
+  <!-- SECTION CV -->
+  <section id="cv">
+    <h2>CV</h2>
+    <p><strong>Formation :</strong> Lycée Henri Sylvoz — Première (Maths, Physique-Chimie, SES)</p>
+    <p><strong>Qualités :</strong> Curieux, autonome, régulier, motivé, sérieux</p>
+    <p><strong>Centres d’intérêt :</strong> Informatique, développement web, sciences, jeux vidéo, écriture poétique</p>
+    <p><a href="cv-enzo.pdf" target="_blank">Télécharger mon CV (PDF)</a></p>
+  </section>
 
-        <p class="last-update">Dernière mise à jour : <span id="lastUpdate"></span></p>
-      </div>
+  <!-- SECTION CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email : <a href="mailto:enzotchaptche937@gmail.com">enzotchaptche937@gmail.com</a></p>
+    <p>GitHub : <a href="https://github.com/ton-compte">Lien vers mes projets</a></p>
+  </section>
 
-      <div class="hero-visual">
-        <img src="avatar.png" alt="Avatar d'Enzo" class="avatar">
-        <p class="slogan">“Apprendre aujourd’hui, construire demain.”</p>
-      </div>
-    </section>
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 — Portfolio d’Enzo Tchaptche</p>
+  </footer>
 
-    <!-- APPRENTISSAGE -->
-    <section id="apprentissage" class="card-section">
-      <h2>Ce que j’apprends actuellement</h2>
-
-      <div class="cards">
-        <article class="card">
-          <h3>HTML</h3>
-          <p>Structure d’un site, balises, liens, images.</p>
-        </article>
-
-        <article class="card">
-          <h3>CSS</h3>
-          <p>Design, couleurs, responsive, animations.</p>
-        </article>
-
-        <article class="card">
-          <h3>JavaScript</h3>
-          <p>Interactions, logique, animations, projets complets.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- PROJETS -->
-    <section id="projets" class="projects-section">
-      <h2>Projets</h2>
-
-      <!-- Portfolio -->
-      <article class="project project-no-image">
-        <div class="project-content">
-          <h3>Portfolio personnel</h3>
-
-          <p class="project-context"><strong>Contexte :</strong> Créer un site pour présenter mon parcours.</p>
-          <p><strong>Ce que j’ai fait :</strong> HTML, CSS, JavaScript, responsive, mode sombre.</p>
-          <p><strong>Ce que j’ai appris :</strong> organisation, design, interactions JS.</p>
-          <p class="project-tech"><strong>Technologies :</strong> HTML, CSS, JavaScript.</p>
-
-          <div class="project-actions">
-            <a href="https://ezimmo3.github.io/Portfolio-Enzo-/" class="primary-btn" target="_blank">Voir le site</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Littérature numérique -->
-      <article class="project project-no-image">
-        <div class="project-content">
-          <h3>Littérature numérique</h3>
-
-          <p class="project-context"><strong>Mon côté littéraire :</strong></p>
-          <p class="project-desc">
-            Sous le nom <strong>JDLF</strong>, j’explore l’écriture introspective et émotionnelle.
-            J’écris des poèmes qui parlent d’amour, de fatigue du cœur, de reconstruction
-            et de vérité intérieure. J’ai créé une plateforme complète pour partager mes textes.
-          </p>
-
-          <div class="project-actions">
-            <a href="https://ezimmo3.github.io/JDLF/" class="primary-btn" target="_blank">Voir le site</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Révise+ -->
-      <article class="project project-no-image">
-        <div class="project-content">
-          <h3>Révise+ — Application de révision scolaire</h3>
-
-          <p class="project-context">
-            <strong>Contexte :</strong> Créer une application complète pour aider les lycéens à réviser efficacement.
-          </p>
-
-          <p class="project-desc">
-            Révise+ est une application web moderne qui propose plus de 
-            <strong>360 questions</strong> réparties dans <strong>8 matières</strong>.
-            Elle intègre plusieurs modes de jeu, un système de niveaux, des animations fluides
-            et une interface inspirée des applications mobiles.
-          </p>
-
-          <h4>Fonctionnalités principales</h4>
-          <ul class="project-list">
-            <li>360 questions réparties en chapitres et matières</li>
-            <li>4 modes de jeu : Normal, Aléatoire, Examen (timer), Apprentissage</li>
-            <li>Système de points, combos et niveaux (Débutant → Maître)</li>
-            <li>Flip-card animée pour afficher la correction</li>
-            <li>Progress bar dynamique et transitions fluides</li>
-            <li>Thème automatique (dark/light) + couleurs par matière</li>
-            <li>Éditeur de questions intégré (génération automatique de JSON)</li>
-          </ul>
-
-          <p class="project-tech">
-            <strong>Technologies :</strong> HTML, CSS, JavaScript, JSON, LocalStorage.
-          </p>
-
-          <div class="project-actions">
-            <a href="https://ezimmo3.github.io/R-vise-/index.html" class="primary-btn" target="_blank">Voir le site</a>
-          </div>
-        </div>
-      </article>
-
-    </section>
-
-    <!-- OBJECTIFS -->
-    <section id="objectifs" class="card-section">
-      <h2>Mes objectifs</h2>
-
-      <div class="cards">
-        <article class="card">
-          <h3>Carrière</h3>
-          <p>Devenir développeur web / ingénieur logiciel.</p>
-        </article>
-
-        <article class="card">
-          <h3>Technologies</h3>
-          <p>Approfondir JavaScript, apprendre React.</p>
-        </article>
-
-        <article class="card">
-          <h3>Projets</h3>
-          <p>Créer des outils utiles et des sites modernes.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- JOURNAL -->
-    <section id="journal" class="timeline-section">
-      <h2>Journal de progression</h2>
-
-      <ul class="timeline">
-        <li><span class="day">Jour 1</span> Mise en place du projet.</li>
-        <li><span class="day">Jour 7</span> Ajout du CSS.</li>
-        <li><span class="day">Jour 14</span> Ajout du JavaScript.</li>
-        <li><span class="day">Jour 21</span> Version responsive.</li>
-      </ul>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="card-section">
-      <h2>Contact</h2>
-      <p>Vous pourrez me contacter via mes réseaux ou par email.</p>
-    </section>
-
-  </main>
-
-  <script src="script.js"></script>
 </body>
 </html>

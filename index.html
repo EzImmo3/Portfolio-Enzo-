@@ -8,93 +8,104 @@
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- ACCUEIL -->
   <header>
     <h1>Enzo Noubissi Ndzeuko</h1>
-    <p>Développeur web & Auteur poétique</p>
+    <p>🧑‍💻 Lycéen passionné par l’informatique et le développement web</p>
+    <img src="avatar.png" alt="Avatar d'Enzo" style="width:120px;border-radius:50%;">
     <nav>
       <a href="#about">À propos</a>
-      <a href="#skills">Compétences</a>
       <a href="#projects">Projets</a>
-      <a href="#goals">Objectifs & Rêves</a>
+      <a href="#skills">Compétences</a>
       <a href="#cv">CV</a>
+      <a href="#faq">FAQ</a>
+      <a href="#journal">Journal</a>
       <a href="#contact">Contact</a>
     </nav>
-    <!-- Bouton clair/sombre -->
     <button class="toggle-theme" onclick="document.body.classList.toggle('dark')">
       🌙 Basculer clair/sombre
     </button>
+    <p><a href="#projects" class="btn">Voir mes projets</a></p>
   </header>
 
-  <!-- SECTION À PROPOS -->
+  <!-- À PROPOS -->
   <section id="about">
-    <h2>À propos</h2>
-    <p>Je suis un étudiant passionné par le numérique et la création artistique. 
-       J’aime construire des projets qui allient technique et émotion, entre code et mots.</p>
+    <h2>À propos de moi</h2>
+    <p>Je m’appelle Enzo, j’ai 16 ans et je suis en Première au Lycée Henri Sylvoz. 
+       Je me passionne pour l’informatique et le développement web. 
+       J’apprends à coder en autodidacte, en construisant des projets concrets. 
+       Mon rêve est de créer des sites modernes qui allient technique et créativité.</p>
   </section>
 
-  <!-- SECTION COMPÉTENCES -->
-  <section id="skills">
-    <h2>Compétences techniques</h2>
-    <ul>
-      <li>HTML, CSS, JavaScript (responsive, interactions, mode sombre)</li>
-      <li>Firebase (likes, vues, favoris en temps réel)</li>
-      <li>PWA (manifest.json, service worker, cache hors-ligne)</li>
-      <li>Organisation (JSON structuré, architecture claire et évolutive)</li>
-      <li>Git / GitHub Pages (gestion de projet, mise en ligne)</li>
-      <li>Design & UX (cohérence visuelle, branding dynamique)</li>
-    </ul>
-  </section>
-
-  <!-- SECTION PROJETS -->
+  <!-- PROJETS -->
   <section id="projects">
-    <h2>Projets réalisés</h2>
+    <h2>Portfolio / Projets</h2>
 
     <article>
-      <h3>Site de poésie JDLF</h3>
-      <p>Un site moderne dédié à mes poèmes, avec plus de 30 textes organisés. 
-         Fonctionnalités : favoris, likes, vues en temps réel, mode immersif, copier/partager, fond animé. 
-         Déployé en PWA avec Firebase.</p>
+      <h3>🌐 Portfolio personnel</h3>
+      <p>Site en HTML, CSS, JS, design moderne, responsive, mode clair/sombre.</p>
+      <p><strong>Technologies :</strong> HTML, CSS, JavaScript, GitHub Pages</p>
+      <p><strong>Ce que j’ai appris :</strong> organisation, design responsive, interactions JS, mise en ligne.</p>
+    </article>
+
+    <article>
+      <h3>📖 Site de poésie JDLF</h3>
+      <p>Un site moderne dédié à mes poèmes, avec plus de 30 textes organisés.</p>
+      <p><strong>Technologies :</strong> HTML, CSS, JS, Firebase, PWA</p>
+      <p><strong>Ce que j’ai appris :</strong> structuration JSON, intégration Firebase, design immersif.</p>
       <p><a href="https://ezimmo3.github.io/JDLF/" target="_blank">Voir le site de poésie</a></p>
     </article>
 
     <article>
-      <h3>Plateforme de révision scolaire</h3>
-      <p>Un site interactif pour réviser les cours, organisé par matière et chapitre. 
-         Objectif : rendre l’apprentissage plus simple et granulaire. 
-         Fonctionnalités : quiz, navigation claire, responsive design.</p>
+      <h3>📚 Plateforme de révision scolaire</h3>
+      <p>Un site interactif pour réviser les cours, organisé par matière et chapitre.</p>
+      <p><strong>Technologies :</strong> HTML, CSS, JS</p>
+      <p><strong>Ce que j’ai appris :</strong> logique de quiz, organisation par chapitres, UX claire.</p>
       <p><a href="https://ezimmo3.github.io/R-vise-/" target="_blank">Voir le site de révision</a></p>
-    </article>
-
-    <article>
-      <h3>Portfolio personnel</h3>
-      <p>Site en HTML, CSS, JS, design moderne, responsive, mode clair/sombre, publié via GitHub Pages.</p>
     </article>
   </section>
 
-  <!-- SECTION OBJECTIFS -->
-  <section id="goals">
-    <h2>Objectifs & Rêves</h2>
+  <!-- COMPÉTENCES -->
+  <section id="skills">
+    <h2>Compétences</h2>
     <ul>
-      <li><strong>Court terme :</strong> enrichir le site de poésie avec recherche, tri et statistiques détaillées.</li>
-      <li><strong>Moyen terme :</strong> développer la plateforme de révision interactive et la rendre complète.</li>
-      <li><strong>Long terme :</strong> créer des projets hybrides qui allient technique et artistique, garder le contrôle créatif, construire une identité forte autour de JDLF.</li>
-      <li><strong>Rêves :</strong> devenir un créateur reconnu pour mes projets web et mes écrits, partager mes idées avec un public plus large.</li>
+      <li>HTML, CSS, JavaScript</li>
+      <li>Firebase (likes, vues, favoris en temps réel)</li>
+      <li>PWA (manifest.json, service worker, cache hors-ligne)</li>
+      <li>Design responsive & UX</li>
+      <li>Organisation de contenu (JSON)</li>
+      <li>Git / GitHub Pages</li>
     </ul>
   </section>
 
-  <!-- SECTION CV -->
+  <!-- CV -->
   <section id="cv">
-    <h2>CV</h2>
-    <p><strong>Formation :</strong> Lycée Henri Sylvoz — Première (Maths, Physique-Chimie, SES)</p>
-    <p><strong>Qualités :</strong> Curieux, autonome, régulier, motivé, sérieux</p>
-    <p><strong>Centres d’intérêt :</strong> Informatique, développement web, sciences, jeux vidéo, écriture poétique</p>
-    <p><a href="cv-enzo.pdf" target="_blank">Télécharger mon CV (PDF)</a></p>
+    <h2>CV téléchargeable</h2>
+    <p><a href="cv-enzo.pdf" target="_blank" class="btn">📄 Télécharger mon CV</a></p>
   </section>
 
-  <!-- SECTION CONTACT -->
+  <!-- FAQ -->
+  <section id="faq">
+    <h2>FAQ personnelle</h2>
+    <p><strong>Pourquoi as-tu commencé à coder ?</strong> Pour transformer mes idées en projets concrets.</p>
+    <p><strong>Combien de temps apprends-tu le code ?</strong> Depuis plusieurs années, en autodidacte.</p>
+    <p><strong>Quels sont tes objectifs ?</strong> Créer des projets hybrides (technique + artistique).</p>
+    <p><strong>Quel projet t’a le plus appris ?</strong> Mon site de poésie JDLF, car il combine Firebase, PWA et design immersif.</p>
+  </section>
+
+  <!-- JOURNAL -->
+  <section id="journal">
+    <h2>Journal de progression</h2>
+    <p>📌 Mars 2026 : Finalisation des sites et lancement officiel sur le web.</p>
+    <p>📌 Mi-Février 2026 : Commencement de la  création de sites en simultané.</p>
+    <p>📌 Février 2026 : Préparation du matériel et des connaissances nécéssaires.</p>
+    <p>📌 Janvier 2026 : Vague Idée par conseil familliale de la création web.</p>
+  </section>
+
+  <!-- CONTACT -->
   <section id="contact">
     <h2>Contact</h2>
+    <p>Pour me contacter à toutes fins utiles.
     <p>Email : <a href="mailto:enzotchaptche937@gmail.com">enzotchaptche937@gmail.com</a></p>
   </section>
 
